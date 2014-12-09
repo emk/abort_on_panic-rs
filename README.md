@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/emk/abort_on_panic-rs.svg)](https://travis-ci.org/emk/abort_on_panic-rs)
 
-[Documentation](http://www.rust-ci.org/emk/abort_on_panic-rs/doc/abort_on_panic).<br>
+[Documentation](http://www.rust-ci.org/emk/abort_on_panic-rs/doc/abort_on_panic/).<br>
 [StackOverflow question](http://stackoverflow.com/questions/27384824/catching-panic-when-rust-called-from-c-ffi-without-spawning-threads) looking for alternatives.
 
 When calling Rust code from C, it's unsafe to call `panic!`.  Doing so may

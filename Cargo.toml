@@ -9,4 +9,4 @@ license = "Unlicense"
 readme = "README.md"
 
 repository = "https://github.com/emk/abort_on_panic-rs"
-documentation = "http://www.rust-ci.org/emk/abort_on_panic-rs/doc/abort_on_panic"
+documentation = "http://www.rust-ci.org/emk/abort_on_panic-rs/doc/abort_on_panic/"
