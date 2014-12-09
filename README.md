@@ -52,7 +52,8 @@ also [`rustrt::unwind::try`][unwind::try], which cannot be nested twice
 within a single thread, among other restrictions.
 
 One solution, proposed by Benjamin Herr, is to abort the process if the
-code in (5) panics.
+code in (5) panics.  This library goes with that approach.  Are there
+better alternatives?
 
 [duktape-rs]: https://github.com/emk/duktape-rs
 [task::try]: http://doc.rust-lang.org/std/task/fn.try.html
