@@ -31,7 +31,9 @@ pub fn main() {
 }
 ```
 
-### License
+### Credits & license
+
+The original idea for this code came from Benjamin Herr.  Many thanks!
 
 This code is placed into the public domain under the terms described by the
 Unlicense.
