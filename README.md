@@ -14,7 +14,8 @@ To use this library, add the following to your `Cargo.toml` file:
 abort_on_panic = "*"
 ```
 
-You can than capture a `panic!` as follows:
+You can then automatically `abort` the process when a `panic!` occurs in a
+inconvenient location:
 
 ```rust
 #![feature(phase)]
