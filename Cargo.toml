@@ -1,0 +1,5 @@
+[package]
+
+name = "abort_on_panic"
+version = "0.0.1"
+authors = ["Eric Kidd <git@randomhacks.net>"]
