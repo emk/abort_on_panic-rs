@@ -2,4 +2,11 @@
 
 name = "abort_on_panic"
 version = "0.0.1"
-authors = ["Eric Kidd <git@randomhacks.net>"]
+authors = ["Eric Kidd <git@randomhacks.net>", "Benjamin Herr <ben@0x539.de>"]
+
+description = "Intercept panic! from unsafe locations and aborting the process"
+license = "Unlicense"
+readme = "README.md"
+
+repository = "https://github.com/emk/abort_on_panic-rs"
+documentation = "http://www.rust-ci.org/emk/abort_on_panic-rs/doc/ducktape/abort_on_panic"
