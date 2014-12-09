@@ -1,3 +1,7 @@
+//! When calling Rust code from C, it's unsafe to call `panic!`.  Doing so
+//! may cause unsafe behavior.  But when calling user-defined functions,
+//! we sometimes need to enforce these rules.
+//!
 //! To use this macro, you'll need to include the following declarations
 //! at the top level of your crate.
 //!
