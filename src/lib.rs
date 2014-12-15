@@ -69,15 +69,19 @@ impl Drop for PanicGuard {
 macro_rules! abort_on_panic {
     ($message:expr, $body:block) => {
         {
-            let _guard = ::abort_on_panic::PanicGuard::with_message($message);
-            $body
+            let guard = ::abort_on_panic::PanicGuard::with_message($message);
+            let result = $body;
+            drop(guard);
+            result
         }
     };
 
     ($body:block) => {
         {
-            let _guard = ::abort_on_panic::PanicGuard::new();
-            $body
+            let guard = ::abort_on_panic::PanicGuard::new();
+            let result = $body;
+            drop(guard);
+            result
         }
     };
 }

@@ -27,8 +27,12 @@ pub fn main() {
     });
     assert_eq!("value", result);
 
-    abort_on_panic!({
+    fn oops() {
         panic!("Uh oh.");
+    }
+    
+    abort_on_panic!({
+        oops();
     });
 }
 ```
