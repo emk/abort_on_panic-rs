@@ -22,9 +22,13 @@
 //! ```
 #![feature(macro_rules)]
 
+extern crate rustrt;
+
 use std::intrinsics::abort;
 use std::io::stderr;
 use std::task::failing;
+use rustrt::local::Local;
+use rustrt::task::Task;
 
 /// Once this object is created, it can only be destroyed in an orderly
 /// fashion.  Attempting to clean it up from a panic handler will abort the
@@ -46,7 +50,12 @@ impl PanicGuard {
 
 impl Drop for PanicGuard {
     fn drop(&mut self) {
-        if failing() {
+        // At the suggestion of Daniel Grunwald, check that we actually
+        // have a task before calling `failing()`.  If we have no task to
+        // catch this panic, `failing()` will always panic, even on
+        // success.  But in this case, the runtime will also abort on panic
+        // automatically, so we can just do nothing.
+        if Local::exists(None::<Task>) && failing() {
             let msg = self.message.unwrap_or("cannot unwind past stack frame");
             let _ = writeln!(&mut stderr(), "{} at {}:{}",
                              msg, file!(), line!());
