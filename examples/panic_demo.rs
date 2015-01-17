@@ -1,5 +1,5 @@
-#![feature(phase)]
-#[phase(plugin, link)] extern crate abort_on_panic;
+#[macro_use]
+extern crate abort_on_panic;
 
 fn oops() {
     panic!("something went wrong!");

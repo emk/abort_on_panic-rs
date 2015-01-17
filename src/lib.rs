@@ -2,25 +2,22 @@
 //! may cause unsafe behavior.  But when calling user-defined functions,
 //! we sometimes need to enforce these rules.
 //!
-//! To use this macro, you'll need to include the following declarations
-//! at the top level of your crate.
-//!
 //! ```ignore
-//! #![feature(phase)]
-//! #[phase(plugin, link)] extern crate abort_on_panic;
+//! #[macro_use]
+//! extern crate abort_on_panic;
+//! 
+//! #[test]
+//! pub fn test_macro() {
+//!     let result = abort_on_panic!({ "value" });
+//!     assert_eq!("value", result);
+//! 
+//!     abort_on_panic!("cannot panic inside FFI callbacks", {
+//!         // ...
+//!     });
+//! }
 //! ```
-//!
-//! Then you can invoke it as follows:
-//!
-//! ```ignore
-//! let result = abort_on_panic!({ "value" });
-//! assert_eq!("value", result);
-//!
-//! abort_on_panic("cannot panic inside FFI callbacks", {
-//!   // ...
-//! });
-//! ```
-#![feature(macro_rules)]
+
+#![allow(unstable)]
 
 use std::intrinsics::abort;
 use std::io::stderr;
