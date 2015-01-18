@@ -17,8 +17,6 @@
 //! }
 //! ```
 
-#![allow(unstable)]
-
 use std::intrinsics::abort;
 use std::io::stderr;
 use std::thread::Thread;
@@ -42,6 +40,7 @@ impl PanicGuard {
 }
 
 impl Drop for PanicGuard {
+    #[allow(unstable)]
     fn drop(&mut self) {
         // At the suggestion of Daniel Grunwald, check that we actually
         // have a task before calling `failing()`.  If we have no task to
