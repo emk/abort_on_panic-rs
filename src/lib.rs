@@ -18,7 +18,7 @@
 //! ```
 
 use std::intrinsics::abort;
-use std::io::stderr;
+use std::old_io::stderr;
 use std::thread::Thread;
 
 /// Once this object is created, it can only be destroyed in an orderly
