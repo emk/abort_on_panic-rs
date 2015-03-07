@@ -21,8 +21,8 @@
 #![feature(core)]
 
 use std::intrinsics::abort;
-use std::old_io::stderr;
-use std::thread::Thread;
+use std::io::{stderr, Write};
+use std::thread::panicking;
 
 /// Once this object is created, it can only be destroyed in an orderly
 /// fashion.  Attempting to clean it up from a panic handler will abort the
@@ -49,7 +49,7 @@ impl Drop for PanicGuard {
         // catch this panic, `failing()` will always panic, even on
         // success.  But in this case, the runtime will also abort on panic
         // automatically, so we can just do nothing.
-        if Thread::panicking() {
+        if panicking() {
             let msg = self.message.unwrap_or("cannot unwind past stack frame");
             let _ = writeln!(&mut stderr(), "{} at {}:{}",
                              msg, file!(), line!());
