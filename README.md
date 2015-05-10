@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/emk/abort_on_panic-rs.svg)](https://travis-ci.org/emk/abort_on_panic-rs)
+[![Build Status](https://travis-ci.org/emk/abort_on_panic-rs.svg)](https://travis-ci.org/emk/abort_on_panic-rs) [![Latest version](https://img.shields.io/crates/v/abort_on_panic.svg)](https://crates.io/crates/abort_on_panic) [![License](https://img.shields.io/crates/l/abort_on_panic.svg)](https://crates.io/crates/abort_on_panic)
 
 [Documentation](http://www.rust-ci.org/emk/abort_on_panic-rs/doc/abort_on_panic/).<br>
 [StackOverflow question](http://stackoverflow.com/questions/27384824/catching-panic-when-rust-called-from-c-ffi-without-spawning-threads) looking for alternatives.
