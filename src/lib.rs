@@ -17,7 +17,6 @@
 //! }
 //! ```
 
-#![feature(io)]
 #![feature(core)]
 
 use std::intrinsics::abort;
