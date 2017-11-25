@@ -19,11 +19,7 @@
 
 use std::io::{stderr, Write};
 use std::thread::panicking;
-
-extern {
-    // OS-level abort function, because std::intrinsics::abort is unstable.
-    fn abort();
-}
+use std::process::abort;
 
 /// Once this object is created, it can only be destroyed in an orderly
 /// fashion.  Attempting to clean it up from a panic handler will abort the
@@ -54,7 +50,7 @@ impl Drop for PanicGuard {
             let msg = self.message.unwrap_or("cannot unwind past stack frame");
             let _ = writeln!(&mut stderr(), "{} at {}:{}",
                              msg, file!(), line!());
-            unsafe { abort(); }
+            abort();
         }
     }
 }
