@@ -10,7 +10,7 @@ readme = "README.md"
 
 homepage = "https://github.com/emk/abort_on_panic-rs"
 repository = "https://github.com/emk/abort_on_panic-rs"
-documentation = "http://emk.github.io/abort_on_panic-rs/abort_on_panic/index.html"
+documentation = "http://docs.rs/abort_on_panic"
 
 [features]
 # Allow access to unstable features when being built with a nightly compiler,
