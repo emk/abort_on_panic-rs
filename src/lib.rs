@@ -1,3 +1,15 @@
+//! ## Current status
+//!
+//! This crate is _mostly_ obsolete. For almost all use cases, you should
+//! instead add the following to your `Cargo.toml` file:
+//!
+//! ```toml
+//! [profile]
+//! panic = 'abort'
+//! ```
+//!
+//! ## Original documentation
+//!
 //! When calling Rust code from C, it's unsafe to call `panic!`.  Doing so
 //! may cause unsafe behavior.  But when calling user-defined functions,
 //! we sometimes need to enforce these rules.

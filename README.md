@@ -1,7 +1,26 @@
 [![Build Status](https://travis-ci.org/emk/abort_on_panic-rs.svg)](https://travis-ci.org/emk/abort_on_panic-rs) [![Latest version](https://img.shields.io/crates/v/abort_on_panic.svg)](https://crates.io/crates/abort_on_panic) [![License](https://img.shields.io/crates/l/abort_on_panic.svg)](https://crates.io/crates/abort_on_panic)
 
-[Documentation](http://emk.github.io/abort_on_panic-rs/abort_on_panic/index.html).<br>
-[StackOverflow question](http://stackoverflow.com/questions/27384824/catching-panic-when-rust-called-from-c-ffi-without-spawning-threads) looking for alternatives.
+[Documentation](http://docs.rs/abort_on_panic).<br>
+
+## Current status
+
+This crate is _mostly_ obsolete. For almost all use cases, you should
+instead add the following to your `Cargo.toml` file:
+
+```toml
+[profile]
+panic = 'abort'
+```
+
+This crate is still passively maintained for those few people who have a
+use-case which is not served by `panic = "abort"`. If you need support for
+Rust 1.0.0 or later, use version `abort_on_panic` 1.x. If you need
+support for Rust 1.22.1 or later, use `abort_on_panic` 2.x.
+
+Bug-fix PRs will still be accepted, but no future changes are planned at
+the current time.
+
+## Overview (old docs)
 
 When calling Rust code from C, it's unsafe to call `panic!`.  Doing so may
 cause unsafe behavior.  But when calling user-defined functions, we

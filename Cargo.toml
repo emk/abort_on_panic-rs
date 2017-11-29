@@ -1,18 +1,18 @@
 [package]
 
 name = "abort_on_panic"
-version = "1.0.0"
+version = "2.0.0"
 authors = ["Eric Kidd <git@randomhacks.net>", "Benjamin Herr <ben@0x539.de>"]
 
 description = "Intercept panic! from unsafe locations and abort the process"
-license = "CC0"
+license = "CC0-1.0"
 readme = "README.md"
 
 homepage = "https://github.com/emk/abort_on_panic-rs"
 repository = "https://github.com/emk/abort_on_panic-rs"
 documentation = "http://docs.rs/abort_on_panic"
 
-[features]
-# Allow access to unstable features when being built with a nightly compiler,
-# to keep travis-cargo happy and enable access to benchmarks if we want them.
-unstable = []
+[badges]
+maintenance = { status = "passively-maintained" }
+travis-ci = { repository = "emk/abort_on_panic-rs", branch = "master" }
+
