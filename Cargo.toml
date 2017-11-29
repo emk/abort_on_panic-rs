@@ -5,7 +5,7 @@ version = "1.0.0"
 authors = ["Eric Kidd <git@randomhacks.net>", "Benjamin Herr <ben@0x539.de>"]
 
 description = "Intercept panic! from unsafe locations and abort the process"
-license = "Unlicense"
+license = "CC0"
 readme = "README.md"
 
 homepage = "https://github.com/emk/abort_on_panic-rs"
